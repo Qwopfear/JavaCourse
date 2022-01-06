@@ -13,13 +13,19 @@ public class Ex5 extends Thread {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(new MyRunnable1());
         Thread t2 = new Thread(new Ex5());
         t1.start();
         t2.start();
 
-        System.out.println("Finish"); // Main NOT sleep and "Finish" will be before other threads
+        /** The thread in which the method is declared
+         *  is waiting until the end of threads
+         *  for which the method is called **/
+
+       t2.join();
+
+        System.out.println("Finish"); // if Main NOT sleep and "Finish" will be before other threads
     }
 }
 
