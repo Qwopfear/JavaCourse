@@ -2,6 +2,7 @@ package Lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class PredicateEx {
 
@@ -39,7 +40,29 @@ public class PredicateEx {
         digitalDep.addEmployee(e9);
 
 
+        System.out.println("-----------Predicate Example-----------");
 
+        ArrayList<Employee> allEmployees = new ArrayList<>(digitalDep.showWorkers());
+        allEmployees.addAll(engineersDep.showWorkers());
+        allEmployees.addAll(salesDep.showWorkers());
+
+        EmployeeTest info = new EmployeeTest();
+
+        info.testEmployees(allEmployees, employee -> {
+
+            return employee.getSalary() < 3000;});
+
+    }
+
+}
+
+class EmployeeTest {
+    void testEmployees(List<Employee> el, Predicate<Employee> pe){
+        for (Employee e: el) {
+            if (pe.test(e)){
+                System.out.println(e);
+            }
+        }
     }
 
 }

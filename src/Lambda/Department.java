@@ -24,10 +24,15 @@ public class Department {
     void addEmployee(Employee e){
         quantityOfMembers++;
         staffMembers.add(e);
+        e.setDepartment(name);
     }
 
     void addEmployee(List<Employee> e){
-        staffMembers.addAll(e);
+        for (Employee employee : e) {
+            quantityOfMembers++;
+            staffMembers.add(employee);
+            employee.setDepartment(name);
+        }
     }
     void removeEmployee(Employee e){
         staffMembers.remove(e);

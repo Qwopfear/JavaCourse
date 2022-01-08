@@ -6,7 +6,7 @@ public class Employee {
     private String name;
     private int age;
     private int salary;
-
+    private String department;
     public Employee(String name, int age, int salary) {
         this.name = name;
         this.age = age;
@@ -19,6 +19,7 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
+                ", dep= " + department +
                 '}';
     }
 
@@ -44,6 +45,13 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public void setDepartment(String department){
+        this.department = department;
+    }
+    public String getDepartment(){
+        return department;
     }
 }
 
