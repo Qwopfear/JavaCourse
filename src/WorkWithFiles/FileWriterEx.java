@@ -5,8 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileWriterEx {
+    static String link = "/home/vsevolod/Desktop/rubai.txt";
     public static void main(String[] args) throws IOException {
-        String link = "/home/vsevolod/Desktopr/rubai.txt";
+
         String rubai =
                 "У попа была собака.\n"+
                 "Он ее любил.\n" +
@@ -14,22 +15,14 @@ public class FileWriterEx {
                 "Он ее убил.\n";
 
 
-        FileWriter writer = null;
-        try{
-            writer = new FileWriter(link);
+        try (FileWriter writer = new FileWriter(link)) {
             for (int i = 0; i < rubai.length(); i++) {
                 writer.write(rubai.charAt(i));
             }
             System.out.println("Done!");
-        }catch (IOException e){
-            writer = new FileWriter("src/WorkWithFiles/rubai2.txt");
-            for (int i = 0; i < rubai.length(); i++) {
-                writer.write(rubai.charAt(i));
-            }
-            writer.write(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
 
-        }finally {
-            writer.close();
         }
 
     }
