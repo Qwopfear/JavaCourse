@@ -2,15 +2,19 @@ package interviewPreparation;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class Medium1 {
 
     // every word in String s contain number
     // replace words in String according to numbers
     public static void main(String[] args) {
-        String  s = "is2 w5e go3od 4but thi1s";
+//        String  s = "is2 w5e go3od 4but thi1s";
+//
+//        System.out.println(stringEnum(s.trim()));
 
-        System.out.println(stringEnum(s.trim()));
+//        Stream.of(DiamondForDiamond.printDiamond(7)).forEach(System.out::print);
+        System.out.println(DiamondForDiamond.pigIt("Pig latin is cool"));
     }
 
     static String stringEnum(String s){
