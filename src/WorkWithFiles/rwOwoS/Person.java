@@ -20,7 +20,7 @@ public class Person {
         index++;
     }
 
-    void addNewCar(Car c){
+    void addNewCar(Car c) {
         personCars.add(c);
     }
 

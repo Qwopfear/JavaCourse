@@ -12,6 +12,11 @@ public class Car {
         index++;
     }
 
+    public Car(String name,String id) {
+        this.name = name;
+        this.id = id;
+    }
+
 
     @Override
     public String toString() {
@@ -19,5 +24,8 @@ public class Car {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+    void setIndex(int i){
+        index = i;
     }
 }

@@ -1,1 +1,2 @@
-Person{name='Alibaba ', id='P0', personCars=[]
+P0=Person{name='Nick', id='P0', personCars=[]}
+P1=Person{name='Diana', id='P1', personCars=[Car{id='C0', name='Mersedes'}]}
